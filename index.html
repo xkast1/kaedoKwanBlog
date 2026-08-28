@@ -22,9 +22,19 @@
   </header>
 
   <main class="container layout">
-    <nav class="sidebar" aria-label="Navegación principal">
-      <a href="#/" class="sidebar__link">Inicio</a>
-      <a href="#/nosotros" class="sidebar__link">Nosotros</a>
+    <nav id="sidebar" class="sidebar" aria-label="Navegación principal">
+      <button id="sidebar-toggle" class="sidebar__toggle" type="button"
+              aria-label="Expandir o contraer menú" aria-expanded="true">
+        <span class="sidebar__toggle-icon" aria-hidden="true"></span>
+      </button>
+      <a href="#/" class="sidebar__link">
+        <span class="sidebar__link-icon" aria-hidden="true">🏠</span>
+        <span class="sidebar__link-text">Inicio</span>
+      </a>
+      <a href="#/nosotros" class="sidebar__link">
+        <span class="sidebar__link-icon" aria-hidden="true">ℹ️</span>
+        <span class="sidebar__link-text">Nosotros</span>
+      </a>
     </nav>
     <section id="app" class="content" aria-live="polite"></section>
   </main>
