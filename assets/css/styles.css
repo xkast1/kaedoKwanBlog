@@ -1,0 +1,259 @@
+/* ============ Design tokens ============ */
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --radius: 12px;
+  --transition: 0.25s ease;
+  --container-max: 1100px;
+}
+
+[data-theme="light"] {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --text: #1a1d21;
+  --text-muted: #5c6470;
+  --accent: #0b6bcb;
+  --accent-contrast: #ffffff;
+  --border: #e2e6ea;
+  --shadow: 0 2px 8px rgba(20, 30, 40, 0.08);
+}
+
+[data-theme="dark"] {
+  --bg: #12151a;
+  --surface: #1c2128;
+  --text: #e8eaed;
+  --text-muted: #9aa4b0;
+  --accent: #4da3ff;
+  --accent-contrast: #0e1117;
+  --border: #2c333c;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* ============ Base ============ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background var(--transition), color var(--transition);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ============ Header (banner) ============ */
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding-block: 2rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text);
+}
+
+.brand__logo {
+  width: clamp(8rem, 22vw, 12rem);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+.brand__title {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: border-color var(--transition);
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+}
+
+.theme-toggle__icon::before {
+  content: "🌙";
+  font-size: 1.1rem;
+}
+
+[data-theme="dark"] .theme-toggle__icon::before {
+  content: "☀️";
+}
+
+/* ============ Post grid ============ */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding-block: 2rem;
+}
+
+.post-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+}
+
+.post-card__image {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  width: 100%;
+}
+
+.post-card__body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.post-card__title {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.post-card__title a {
+  color: var(--text);
+}
+
+.post-card__title a:hover {
+  color: var(--accent);
+}
+
+.post-card__meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.post-card__summary {
+  margin: 0;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.post-card__link {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ============ Post detail ============ */
+.post-detail {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-block: 2rem;
+  padding: 2rem;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.post-detail__image {
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.post-detail__title {
+  margin: 0 0 0.5rem;
+  font-size: 1.8rem;
+  line-height: 1.3;
+}
+
+.post-detail__meta {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-detail__content p {
+  margin-block: 0 1rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* ============ States ============ */
+.state-message {
+  text-align: center;
+  padding-block: 4rem;
+  color: var(--text-muted);
+}
+
+/* ============ Footer ============ */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding-block: 1.5rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 600px) {
+  .post-detail {
+    padding: 1.25rem;
+  }
+
+  .post-detail__title {
+    font-size: 1.4rem;
+  }
+}

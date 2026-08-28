@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "titulo": "Título de la primera noticia",
+      "resumen": "Resumen breve de la noticia para la tarjeta del listado.",
+      "contenido": "Primer párrafo del contenido completo.\n\nSegundo párrafo del contenido completo.",
+      "fecha": "2026-08-28",
+      "autor": "Nombre del Autor",
+      "imagen": "assets/img/ejemplo-1.jpg"
+    },
+    {
+      "id": 2,
+      "titulo": "Título de la segunda noticia",
+      "resumen": "Resumen breve de la segunda noticia.",
+      "contenido": "Contenido completo de la segunda noticia.",
+      "fecha": "2026-08-27",
+      "autor": "Nombre del Autor",
+      "imagen": "assets/img/ejemplo-2.jpg"
+    }
+  ]
+}
