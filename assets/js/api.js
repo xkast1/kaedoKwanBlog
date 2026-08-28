@@ -30,3 +30,15 @@ export async function fetchPostById(id) {
   const posts = await fetchPosts();
   return posts.find((post) => String(post.id) === String(id));
 }
+
+/**
+ * Obtiene el contenido estático de la página "Nosotros".
+ * @returns {Promise<object>} Objeto con titulo y contenido.
+ */
+export async function fetchNosotros() {
+  const response = await fetch("data/nosotros.json");
+  if (!response.ok) {
+    throw new Error(`Error al cargar los datos (HTTP ${response.status})`);
+  }
+  return response.json();
+}

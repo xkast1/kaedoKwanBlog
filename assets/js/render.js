@@ -80,3 +80,22 @@ export function renderPostDetail(post) {
 export function renderMessage(message) {
   return `<p class="state-message">${escapeHtml(message)}</p>`;
 }
+
+/**
+ * Genera la vista estática "Nosotros" a partir de título y contenido en párrafos.
+ * @param {object} data Objeto con titulo y contenido separados por doble salto de línea.
+ * @returns {string} Fragmento HTML de la página.
+ */
+export function renderNosotros(data) {
+  const paragraphs = String(data.contenido)
+    .split(/\n\s*\n/)
+    .map((p) => `<p>${escapeHtml(p.trim())}</p>`)
+    .join("");
+
+  return `
+    <article class="post-detail">
+      <h1 class="post-detail__title">${escapeHtml(data.titulo)}</h1>
+      <div class="post-detail__content">${paragraphs}</div>
+    </article>
+  `;
+}

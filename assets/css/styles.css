@@ -59,6 +59,58 @@ a {
   padding: 0 1rem;
 }
 
+/* ============ Layout (sidebar + content) ============ */
+.layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding-block: 2rem;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  position: sticky;
+  top: 1.5rem;
+}
+
+.sidebar__link {
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.sidebar__link:hover {
+  background: var(--surface);
+}
+
+.sidebar__link.is-active {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
 /* ============ Header (banner) ============ */
 .site-header {
   background: var(--surface);

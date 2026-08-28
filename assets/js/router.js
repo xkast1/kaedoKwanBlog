@@ -1,5 +1,5 @@
-import { fetchPosts, fetchPostById } from "./api.js";
-import { renderPostCard, renderPostDetail, renderMessage } from "./render.js";
+import { fetchPosts, fetchPostById, fetchNosotros } from "./api.js";
+import { renderPostCard, renderPostDetail, renderNosotros, renderMessage } from "./render.js";
 
 const app = document.getElementById("app");
 
@@ -37,6 +37,25 @@ async function showDetail(id) {
   }
 }
 
+/** Muestra la página estática "Nosotros". */
+async function showNosotros() {
+  app.innerHTML = renderMessage("Cargando…");
+  try {
+    const data = await fetchNosotros();
+    app.innerHTML = renderNosotros(data);
+    document.title = `${data.titulo} — Kaedo Kwan Blog`;
+  } catch (error) {
+    app.innerHTML = renderMessage(`No se pudo cargar la página: ${error.message}`);
+  }
+}
+
+/** Resalta el enlace de navegación correspondiente a la ruta activa. */
+function updateActiveLink(hash) {
+  document.querySelectorAll(".sidebar__link").forEach((link) => {
+    link.classList.toggle("is-active", link.getAttribute("href") === hash);
+  });
+}
+
 /** Resuelve la ruta actual a partir del hash de la URL. */
 export function handleRoute() {
   const hash = window.location.hash || "#/";
@@ -44,9 +63,12 @@ export function handleRoute() {
 
   window.scrollTo(0, 0);
   document.title = "Kaedo Kwan Blog";
+  updateActiveLink(detailMatch ? "#/" : hash);
 
   if (detailMatch) {
     showDetail(decodeURIComponent(detailMatch[1]));
+  } else if (hash === "#/nosotros") {
+    showNosotros();
   } else {
     showList();
   }
