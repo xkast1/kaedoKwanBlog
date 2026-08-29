@@ -2,12 +2,12 @@
   "posts": [
     {
       "id": 1,
-      "titulo": "Título de la primera noticia",
-      "resumen": "Resumen breve de la noticia para la tarjeta del listado.",
-      "contenido": "Primer párrafo del contenido completo.\n\nSegundo párrafo del contenido completo.",
-      "fecha": "2026-08-28",
-      "autor": "Nombre del Autor",
-      "imagen": "assets/img/ejemplo-1.jpg"
+      "titulo": "Examen de GUP Agosto 2026",
+      "resumen": "Felicitamos a los estudiantes que rindieron de forma exitosa el examen de GUP.",
+      "contenido": "Nuestros estudiantes han demostrado un excelente desempeño en el examen de GUP celebrado el 22 de agosto de 2026.",
+      "fecha": "2026-08-22",
+      "autor": "Javier Acuña",
+      "imagen": "assets/img/post/examenGupAgosto2026.jpg"
     },
     {
       "id": 2,
