@@ -178,20 +178,26 @@ a {
 
 /* ============ Header (banner) ============ */
 .site-header {
-  background: var(--surface);
+  /* Imagen de fondo que cubre todo el header */
+  background: url('assets/img/banner.jpg') no-repeat center center;
+  background-size: cover;          /* Hace que la imagen cubra todo el header */
   border-bottom: 1px solid var(--border);
+  height: 100vh;                   /* El header ocupa toda la altura de la ventana */
+  position: relative;              /* Necesario para colocar el botón sobre él */
 }
 
+/* El interior del header: centrado vertical y horizontal */
 .header-inner {
+  /* Elimina el padding vertical para que la imagen se expanda */
+  padding-block: 0;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center;         /* Centra el contenido verticalmente */
   gap: 0.75rem;
-  padding-block: 2rem;
 }
-
+/* Logo y título dentro del header */
 .brand {
   display: flex;
   flex-direction: column;
@@ -200,11 +206,11 @@ a {
   color: var(--text);
 }
 
+/* Haz que el logo ocupe todo el ancho disponible pero sin superar la anchura del header */
 .brand__logo {
-  width: clamp(8rem, 22vw, 12rem);
+  width: 100%;
   height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  object-fit: contain;             /* Mantiene la proporción del logo */
 }
 
 .brand__title {
@@ -212,8 +218,9 @@ a {
   font-weight: 700;
 }
 
+/* Botón de tema (claro/oscuro) */
 .theme-toggle {
-  position: absolute;
+  position: absolute;              /* Se coloca en la esquina superior derecha */
   top: 1rem;
   right: 1rem;
   background: transparent;
@@ -225,6 +232,15 @@ a {
   display: grid;
   place-items: center;
   transition: border-color var(--transition);
+}
+
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15); /* Color claro cuando el tema está oscuro */
+  border-radius: 50%;
+  z-index: -1;                      /* Va detrás del icono del botón */
 }
 
 .theme-toggle:hover {
