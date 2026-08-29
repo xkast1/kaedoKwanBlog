@@ -177,40 +177,54 @@ a {
 }
 
 /* ============ Header (banner) ============ */
-.site-header {
-  /* Imagen de fondo que cubre todo el header */
-  background: url('assets/img/banner.jpg') no-repeat center center;
-  background-size: cover;          /* Hace que la imagen cubra todo el header */
-  border-bottom: 1px solid var(--border);
-  height: 100vh;                   /* El header ocupa toda la altura de la ventana */
-  position: relative;              /* Necesario para colocar el botón sobre él */
+.topbar {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0.85rem 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 3;
 }
 
-/* El interior del header: centrado vertical y horizontal */
+.site-header {
+  background: url('../img/banner.jpg') center center / cover no-repeat;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  min-height: 0;
+  height: auto;
+  aspect-ratio: 4128 / 1024;
+  overflow: hidden;
+  border-radius: 0 0 18px 18px;
+}
+
 .header-inner {
-  /* Elimina el padding vertical para que la imagen se expanda */
-  padding-block: 0;
+  width: 100%;
+  min-height: 0;
+  padding: 0;
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;         /* Centra el contenido verticalmente */
-  gap: 0.75rem;
+  justify-content: center;
 }
-/* Logo y título dentro del header */
+
 .brand {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 0.75rem;
   color: var(--text);
 }
 
-/* Haz que el logo ocupe todo el ancho disponible pero sin superar la anchura del header */
 .brand__logo {
   width: 100%;
+  max-width: 100%;
   height: auto;
-  object-fit: contain;             /* Mantiene la proporción del logo */
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
 .brand__title {
@@ -220,36 +234,46 @@ a {
 
 /* Botón de tema (claro/oscuro) */
 .theme-toggle {
-  position: absolute;              /* Se coloca en la esquina superior derecha */
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: 1px solid var(--border);
+  position: relative;
+  top: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 50%;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.7rem;
+  height: 2.7rem;
   cursor: pointer;
   display: grid;
   place-items: center;
-  transition: border-color var(--transition);
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.16);
+  backdrop-filter: blur(2px);
+  z-index: 1;
 }
 
 .theme-toggle::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.15); /* Color claro cuando el tema está oscuro */
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 50%;
-  z-index: -1;                      /* Va detrás del icono del botón */
+  z-index: -1;
 }
 
 .theme-toggle:hover {
-  border-color: var(--accent);
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
 }
 
 .theme-toggle__icon::before {
   content: "🌙";
   font-size: 1.1rem;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+[data-theme="dark"] .theme-toggle {
+  background: rgba(15, 23, 42, 0.28);
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
 [data-theme="dark"] .theme-toggle__icon::before {
