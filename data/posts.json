@@ -2,21 +2,21 @@
   "posts": [
     {
       "id": 1,
+      "titulo": "Nuestra Escuela de Taekwondo",
+      "resumen": "Descubre la historia y los valores de nuestra escuela de Taekwondo.",
+      "contenido": "Nuestra escuela de Taekwondo es un lugar donde se cultivan no solo las habilidades marciales, sino también los valores fundamentales como el respeto, la disciplina y la integridad.",
+      "fecha": "2026-08-20",
+      "autor": "Javier Acuña",
+      "imagen": "assets/img/post/flayerEscuela.png"
+    },
+    {
+      "id": 2,
       "titulo": "Examen de GUP Agosto 2026",
       "resumen": "Felicitamos a los estudiantes que rindieron de forma exitosa el examen de GUP.",
       "contenido": "Nuestros estudiantes han demostrado un excelente desempeño en el examen de GUP celebrado el 22 de agosto de 2026.",
       "fecha": "2026-08-22",
       "autor": "Javier Acuña",
-      "imagen": "assets/img/post/examenGupAgosto2026.jpg"
-    },
-    {
-      "id": 2,
-      "titulo": "Título de la segunda noticia",
-      "resumen": "Resumen breve de la segunda noticia.",
-      "contenido": "Contenido completo de la segunda noticia.",
-      "fecha": "2026-08-27",
-      "autor": "Nombre del Autor",
-      "imagen": "assets/img/ejemplo-2.jpg"
+      "imagen": "assets/img/post/examenGupAgosto2026.jpeg"
     }
   ]
 }
