@@ -304,9 +304,10 @@ a {
 }
 
 .post-card__image {
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
   width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
 }
 
 .post-card__body {
@@ -362,8 +363,10 @@ a {
   border-radius: var(--radius);
   margin-bottom: 1.5rem;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  max-height: 520px;
+  object-fit: contain;
+  background: var(--bg);
+  display: block;
 }
 
 .post-detail__title {
