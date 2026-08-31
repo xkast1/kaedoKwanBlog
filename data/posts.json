@@ -4,19 +4,28 @@
       "id": 1,
       "titulo": "Nuestra Escuela de Taekwondo",
       "resumen": "Descubre la historia y los valores de nuestra escuela de Taekwondo.",
-      "contenido": "Nuestra escuela de Taekwondo es un lugar donde se cultivan no solo las habilidades marciales, sino también los valores fundamentales como el respeto, la disciplina y la integridad.",
+      "contenido": "Nuestra escuela de Taekwondo es un lugar donde se cultivan no solo las habilidades marciales, sino tambiÃ©n los valores fundamentales como el respeto, la disciplina y la integridad.",
       "fecha": "2026-08-20",
-      "autor": "Javier Acuña",
+      "autor": "Javier AcuÃ±a",
       "imagen": "assets/img/logo.png"
     },
     {
       "id": 2,
       "titulo": "Examen de GUP Agosto 2026",
       "resumen": "Felicitamos a los estudiantes que rindieron de forma exitosa el examen de GUP.",
-      "contenido": "Nuestros estudiantes han demostrado un excelente desempeño en el examen de GUP celebrado el 22 de agosto de 2026.",
+      "contenido": "Nuestros estudiantes han demostrado un excelente desempeÃ±o en el examen de GUP celebrado el 22 de agosto de 2026.",
       "fecha": "2026-08-22",
-      "autor": "Javier Acuña",
+      "autor": "Javier AcuÃ±a",
       "imagen": "assets/img/post/examenGupAgosto2026.jpeg"
+    },
+    {
+      "id": 3,
+      "titulo": "Test boot",
+      "resumen": "Hola esta es una prueba desde el bot",
+      "contenido": "Tests\nTest2",
+      "fecha": "2026-08-31",
+      "autor": "Javier Acuña",
+      "imagen": "assets/img/telegram-3.jpg"
     }
   ]
 }
