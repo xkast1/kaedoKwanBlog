@@ -17,15 +17,6 @@
       "fecha": "2026-08-22",
       "autor": "Javier AcuÃ±a",
       "imagen": "assets/img/post/examenGupAgosto2026.jpeg"
-    },
-    {
-      "id": 3,
-      "titulo": "Test boot",
-      "resumen": "Hola esta es una prueba desde el bot",
-      "contenido": "Tests\nTest2",
-      "fecha": "2026-08-31",
-      "autor": "Javier Acuña",
-      "imagen": "assets/img/telegram-3.jpg"
     }
   ]
 }
